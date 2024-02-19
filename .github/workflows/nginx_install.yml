@@ -27,14 +27,13 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    - uses: actions/checkout@v3
-    # The type of runner that the job will run on
-    runs-on: [self-hosted, vatikan, docker]
+    runs-on: vatikan
+    steps:
+      -name: checkout
+      - uses: actions/checkout@v3
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
       # Runs a single command using the runners shell
       - name: init check
         run: |
