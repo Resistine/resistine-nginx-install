@@ -27,6 +27,7 @@ git submodule update --recursive
 autoupdate
 libtoolize
 aclocal
+./build.sh
 # Configure and build ModSecurity
 ./configure
 make
