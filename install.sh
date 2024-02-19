@@ -81,6 +81,9 @@ cp -f /tmp/nginx.conf /usr/local/nginx/conf/nginx.conf
 sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /usr/local/nginx/conf/modsecurity.conf
 
 # Clone the OWASP CRS (Core Rule Set)
+if [ -e /tmp/owasp-crs ]; then
+  rm -rf /tmp/owasp-crs
+fi
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs /tmp/owasp-crs
 cp -rf /tmp/owasp-crs /usr/local/nginx/conf/oswap-crs
 # Copy the CRS setup file
