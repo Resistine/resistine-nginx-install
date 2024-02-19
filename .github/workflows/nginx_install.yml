@@ -46,7 +46,7 @@ jobs:
           fi
           docker cp install.sh $k:/tmp/
           docker exec -i $k apt update && apt upgrade -y
-          apt install build-essential
+          docker exec -i $k apt install build-essential
           docker exec -i /bin/bash chmod +x /tmp/install.sh
           docker exec -i $k /bin/bash /tmp/install.sh
       # Runs a set of commands using the runners shell
