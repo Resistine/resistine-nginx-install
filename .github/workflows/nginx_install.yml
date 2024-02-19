@@ -30,11 +30,11 @@ jobs:
   build:
     runs-on: vatikan
     steps:
-      - name: checkout
       - uses: actions/checkout@v3
 
     # Steps represent a sequence of tasks that will be executed as part of the job
       # Runs a single command using the runners shell
+      - name: init check
         run: |
            k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
            if [ $? == 0 ]; then
