@@ -57,15 +57,15 @@ mkdir -p /var/log/nginx
 ln -s /usr/local/nginx/sbin/nginx /usr/local/sbin/
 
 # Copy ModSecurity configuration files to Nginx directory
-cp ../ModSecurity/modsecurity.conf-recommended /usr/local/nginx/conf/modsecurity.conf
-cp ../ModSecurity/unicode.mapping /usr/local/nginx/conf/
+cp -f ../ModSecurity/modsecurity.conf-recommended /usr/local/nginx/conf/modsecurity.conf
+cp -f ../ModSecurity/unicode.mapping /usr/local/nginx/conf/
 
 # Backup the original nginx.conf file
 cp /usr/local/nginx/conf/nginx.conf{,.bak}
 
 # Assume nginx.conf provided by user is in the parent directory
 # If not, you need to modify the path accordingly
-cp /tmp/nginx.conf /usr/local/nginx/conf/nginx.conf
+cp -f /tmp/nginx.conf /usr/local/nginx/conf/nginx.conf
 
 # Enable ModSecurity in the nginx configuration
 sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /usr/local/nginx/conf/modsecurity.conf
@@ -74,7 +74,7 @@ sed -i 's/SecRuleEngine DetectionOnly/SecRuleEngine On/' /usr/local/nginx/conf/m
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs /usr/local/nginx/conf/owasp-crs
 
 # Copy the CRS setup file
-cp /usr/local/nginx/conf/owasp-crs/crs-setup.conf.example /usr/local/nginx/conf/owasp-crs/crs-setup.conf
+cp -f /usr/local/nginx/conf/owasp-crs/crs-setup.conf.example /usr/local/nginx/conf/owasp-crs/crs-setup.conf
 
 # Include OWASP CRS configuration in ModSecurity
 echo -e "Include owasp-crs/crs-setup.conf\nInclude owasp-crs/rules/*.conf" >> /usr/local/nginx/conf/modsecurity.conf
@@ -82,7 +82,7 @@ echo -e "Include owasp-crs/crs-setup.conf\nInclude owasp-crs/rules/*.conf" >> /u
 # Setup Nginx service
 # Assume nginx.service provided by user is in the parent directory
 # If not, you need to modify the path accordingly
-cp /tmp/nginx.service /etc/systemd/system/nginx.service
+cp -f /tmp/nginx.service /etc/systemd/system/nginx.service
 
 # Reload systemd, start and enable Nginx service
 systemctl daemon-reload
