@@ -30,7 +30,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: [self-hosted, vatikan]
+    runs-on: [self-hosted, vatikan, docker]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -39,13 +39,10 @@ jobs:
         run: |
            k=`docker ps |grep 'resistine-ubuntu' |awk '{print $1}'`
            if [ eval $k = 0 ]; then
-             docker exec $k -it install.sh
+             cat install.sh | docker exec -i $k
            else
-             apt install -i docker.io
-             systemctl start docker.socket
-             systemctl start docker
              docker run  -id --name resistine-ubuntu ubuntu:22.04
-             docker exec $k -it install.sh
+             cat install.sh | docker exec -i $k
            fi
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
