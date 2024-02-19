@@ -39,10 +39,10 @@ jobs:
           cat install.sh
           k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
           if [ $? == 0 ]; then
-            echo "docker container is ok, lets get started"
+            echo "docker container is ok, lets get started";
           else
-            echo "starting resistine ubuntu"
-            docker run  -id --name resistine-ubuntu ubuntu:22.04 &&
+            echo "starting resistine ubuntu";
+            docker run  -id --name resistine-ubuntu ubuntu:22.04;
           fi
           docker cp install.sh $k:/tmp/
           docker exec -i $k apt update && apt upgrade -y
