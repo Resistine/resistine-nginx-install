@@ -8,10 +8,12 @@ set -e
 git clone https://github.com/owasp-modsecurity/ModSecurity.git
 cd ModSecurity
 
+export CFLAGS="-g -O0"
+
 # Initialize and update submodules
 git submodule init
 git submodule update --recursive
-
+./build.sh
 # Configure and build ModSecurity
 ./configure
 make
