@@ -38,7 +38,7 @@ jobs:
       - name: init check
         run: |
            k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
-           if [ eval $k = 0 ]; then
+           if [ $? == 0 ]; then
              cat install.sh | docker exec -i $k ;
            else
              docker run  -id --name resistine-ubuntu ubuntu:22.04;
