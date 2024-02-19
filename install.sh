@@ -85,7 +85,7 @@ if [ -e /tmp/owasp-crs ]; then
   rm -rf /tmp/owasp-crs
 fi
 git clone https://github.com/SpiderLabs/owasp-modsecurity-crs /tmp/owasp-crs
-cp -rf /tmp/owasp-crs /usr/local/nginx/conf/oswap-crs
+cp -rf /tmp/owasp-crs /usr/local/nginx/conf/
 # Copy the CRS setup file
 cp -f /usr/local/nginx/conf/owasp-crs/crs-setup.conf.example /usr/local/nginx/conf/owasp-crs/crs-setup.conf
 
