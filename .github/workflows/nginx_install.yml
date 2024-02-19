@@ -44,14 +44,12 @@ jobs:
             docker run  -id --name resistine-ubuntu ubuntu:22.04;
             k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
           fi
-          docker cp install.sh $k:/tmp/
-          docker cp nginx.service $k:/tmp/
-          docker cp nginx.conf $k:/tmp/
-          docker exec -i $k apt update
-          docker exec -i $k apt upgrade -y
-          docker exec -i $k apt install -y build-essential systemctl autoconf automake libtool libpcre3 libpcre3-dev autotools-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev git
-          docker exec -i $k /usr/bin/chmod +x /tmp/install.sh
-          docker exec -i $k /bin/bash /tmp/install.sh
+          docker cp install.sh $k:/
+          docker cp nginx.service $k:/
+          docker cp nginx.conf $k:/
+          docker exec -i $k /usr/bin/chmod +x /install.sh
+          docker exec -i $k /bin/bash /install.sh
+          docker exec -i $k /usr/bin/rm -f /install.sh /nginx.conf /nginx.service
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |

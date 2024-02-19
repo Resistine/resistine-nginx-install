@@ -9,6 +9,9 @@ fi
 
 mkdir build
 cd build
+apt update
+apt upgrade -y
+apt install -y build-essential systemctl autoconf automake libtool libpcre3 libpcre3-dev autotools-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev git
 
 # Clone the ModSecurity repository
 git clone https://github.com/owasp-modsecurity/ModSecurity.git
