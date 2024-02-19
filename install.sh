@@ -96,6 +96,7 @@ echo -e "Include owasp-crs/crs-setup.conf\nInclude owasp-crs/rules/*.conf" >> /u
 # Assume nginx.service provided by user is in the parent directory
 # If not, you need to modify the path accordingly
 cp -f /nginx.service /etc/systemd/system/nginx.service
+ln -s /usr/local/nginx/conf /etc/nginx
 
 # Reload systemd, start and enable Nginx service
 systemctl enable nginx.service
