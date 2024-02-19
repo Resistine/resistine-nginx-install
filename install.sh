@@ -3,7 +3,10 @@
 
 # Exit on errors
 set -e
-rm -rf build
+if  [[ -e build ]];then
+  rm -rf build
+fi
+
 mkdir build
 cd build
 
