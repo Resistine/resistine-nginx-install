@@ -22,6 +22,7 @@ export CFLAGS="-g -O0"
 # Initialize and update submodules
 git submodule init
 git submodule update --recursive
+autoupdate
 ./build.sh
 # Configure and build ModSecurity
 ./configure
