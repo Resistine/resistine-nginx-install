@@ -30,7 +30,7 @@ jobs:
   build:
     runs-on: vatikan
     steps:
-      -name: checkout
+      - name: checkout
       - uses: actions/checkout@v3
 
     # Steps represent a sequence of tasks that will be executed as part of the job
