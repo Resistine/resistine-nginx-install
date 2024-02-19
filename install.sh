@@ -99,4 +99,4 @@ cp -f /nginx.service /etc/systemd/system/nginx.service
 
 # Reload systemd, start and enable Nginx service
 systemctl enable nginx.service
-service nginx start
+systemctl start nginx
