@@ -41,7 +41,7 @@ useradd -r -M -s /sbin/nologin -d /usr/local/nginx nginx || echo "nginx user alr
 # Configure Nginx with ModSecurity dynamic module
 # Note: Corrected the dashes and module path
 auto/configure --user=nginx --group=nginx --with-pcre-jit \
---with-http_proxy_module --with-debug --with-compat --with-http_ssl_module \
+--with-stream --with-debug --with-compat --with-http_ssl_module \
 --with-http_realip_module --add-dynamic-module=../ModSecurity-nginx \
 --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log \
 --with-http_dav_module --with-http_slice_module --with-http_v2_module \
@@ -52,6 +52,7 @@ auto/make
 auto/make modules
 auto/make install
 
+mkdir -p /var/log/nginx
 # Link nginx to the system path
 ln -s /usr/local/nginx/sbin/nginx /usr/local/sbin/
 
