@@ -48,9 +48,9 @@ auto/configure --user=nginx --group=nginx --with-pcre-jit \
 --with-http_addition_module --with-threads
 
 # Build and install Nginx
-auto/make
-auto/make modules
-auto/make install
+make
+make modules
+make install
 
 mkdir -p /var/log/nginx
 # Link nginx to the system path
