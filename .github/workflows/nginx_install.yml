@@ -48,9 +48,9 @@ jobs:
           docker exec -i $k apt update
           docker exec -i $k apt upgrade -y
           docker exec -i $k apt install -y build-essential
-          docker exec -i /bin/bash chmod +x /tmp/install.sh
+          docker exec -i $k /bin/bash chmod +x /tmp/install.sh
           docker exec -i $k /bin/bash /tmp/install.sh
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo wazuh started
+          echo nginx started
