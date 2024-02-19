@@ -54,7 +54,7 @@ make install
 
 mkdir -p /var/log/nginx
 # Link nginx to the system path
-if  [[ -ne /usr/local/sbin/nginx ]]; then
+if  [[ -e /usr/local/sbin/nginx ]]; then
   rm -f /usr/local/sbin/nginx
 fi
 ln -s /usr/local/nginx/sbin/nginx /usr/local/sbin/
