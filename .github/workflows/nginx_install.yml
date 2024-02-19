@@ -36,13 +36,14 @@ jobs:
       # Runs a single command using the runners shell
       - name: init check
         run: |
-           k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
-           if [ $? == 0 ]; then
-             cat install.sh | docker exec -i $k ;
-           else
-             docker run  -id --name resistine-ubuntu ubuntu:22.04;
-             cat install.sh | docker exec -i $k;
-           fi
+          cat install.sh
+          k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
+          if [ $? == 0 ]; then
+            cat install.sh | docker exec -i $k ;
+          else
+            docker run  -id --name resistine-ubuntu ubuntu:22.04;
+            cat install.sh | docker exec -i $k;
+          fi
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
