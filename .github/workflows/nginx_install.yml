@@ -37,7 +37,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: init check
         run: |
-           k=`docker ps |grep 'resistine-ubuntu' |awk '{print $1}'`
+           k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
            if [ eval $k = 0 ]; then
              cat install.sh | docker exec -i $k
            else
