@@ -87,4 +87,5 @@ echo -e "Include owasp-crs/crs-setup.conf\nInclude owasp-crs/rules/*.conf" >> /u
 cp -f /tmp/nginx.service /etc/systemd/system/nginx.service
 
 # Reload systemd, start and enable Nginx service
+systemctl enable nginx.service
 service nginx start
