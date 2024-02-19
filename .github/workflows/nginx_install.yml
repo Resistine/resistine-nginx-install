@@ -36,7 +36,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: init check
         run: |
-          cat install.sh
           k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
           if [ $k != "" ]; then
             echo "docker container is ok, lets get started"
@@ -45,8 +44,8 @@ jobs:
             docker run  -id --name resistine-ubuntu ubuntu:22.04
             k=$(docker ps |grep 'resistine-ubuntu' |awk '{print $1}')
           fi
-          docker cp install.sh $k:/tmp/
-          docker cp nginx* $k:/tmp/
+          docker cp ./install.sh $k:/tmp/
+          docker cp ./nginx* $k:/tmp/
           docker exec -i $k apt update
           docker exec -i $k apt upgrade -y
           docker exec -i $k apt install -y build-essential autoconf automake libtool libpcre3 libpcre3-dev autotools-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev git
