@@ -30,9 +30,10 @@ cd ..
 git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
 
 # Download, extract, and enter the Nginx source directory
-wget https://nginx.org/download/nginx-1.25.3.tar.gz
-tar -xvf nginx-1.25.3.tar.gz
-cd nginx-1.25.3
+git clone https://github.com/nginx/nginx.git
+cd nginx*
+git submodule init
+git submodule update --recursive
 
 # Create nginx user
 useradd -r -M -s /sbin/nologin -d /usr/local/nginx nginx || echo "nginx user already exists"
