@@ -71,7 +71,7 @@ cp -f ../ModSecurity/modsecurity.conf-recommended /usr/local/nginx/conf/modsecur
 cp -f ../ModSecurity/unicode.mapping /usr/local/nginx/conf/
 
 # Backup the original nginx.conf file
-cp /usr/local/nginx/conf/nginx.conf{,.bak}
+cp -f /usr/local/nginx/conf/nginx.conf{,.bak}
 
 # Assume nginx.conf provided by user is in the parent directory
 # If not, you need to modify the path accordingly
@@ -96,7 +96,7 @@ echo -e "Include owasp-crs/crs-setup.conf\nInclude owasp-crs/rules/*.conf" >> /u
 # Assume nginx.service provided by user is in the parent directory
 # If not, you need to modify the path accordingly
 cp -f /nginx.service /etc/systemd/system/nginx.service
-ln -s /usr/local/nginx/conf /etc/nginx
+ln -sf /usr/local/nginx/conf /etc/nginx
 
 # Reload systemd, start and enable Nginx service
 systemctl enable nginx.service
