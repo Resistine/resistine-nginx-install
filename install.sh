@@ -54,8 +54,10 @@ make install
 
 mkdir -p /var/log/nginx
 # Link nginx to the system path
+if  [[ -ne /usr/local/sbin/nginx ]]; then
+  rm -f /usr/local/sbin/nginx
+fi
 ln -s /usr/local/nginx/sbin/nginx /usr/local/sbin/
-
 # Copy ModSecurity configuration files to Nginx directory
 cp -f ../ModSecurity/modsecurity.conf-recommended /usr/local/nginx/conf/modsecurity.conf
 cp -f ../ModSecurity/unicode.mapping /usr/local/nginx/conf/
