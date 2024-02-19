@@ -3,7 +3,8 @@
 
 # Exit on errors
 set -e
-
+mkdir build
+cd build
 # Clone the ModSecurity repository
 git clone https://github.com/owasp-modsecurity/ModSecurity.git
 cd ModSecurity
