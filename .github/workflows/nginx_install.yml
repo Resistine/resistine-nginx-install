@@ -45,7 +45,8 @@ jobs:
             docker run  -id --name resistine-ubuntu ubuntu:22.04;
           fi
           docker cp install.sh $k:/tmp/
-          docker exec -it $k apt update && apt upgrade -y
+          docker exec -it $k apt update
+          docker exec -it $k apt upgrade -y
           docker exec -it $k apt install build-essential
           docker exec -it /bin/bash chmod +x /tmp/install.sh
           docker exec -it $k /bin/bash /tmp/install.sh
