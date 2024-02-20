@@ -24,7 +24,17 @@
   -  Create new runner via easy ***runner configurator*** through one ***[click](https://github.com/Resistine/resistine-nginx-install/settings/actions/runners/new?arch=x64&os=linux)***.
 
   -  After You set up runner with correct ***LABELS***, you are simply ready to ***[deploy](https://github.com/Resistine/resistine-nginx-install/actions)***, to ***runners*** and check the ***LABELS*** and runner status.
-  *** !!! always check ***LABELS*** and active ***runners*** before you run the pipeline !!! ***
+>  [!CAUTION]
+>  *** !!! always check ***LABELS*** and active ***runners*** before you run the pipeline !!! ***
 
   -  Now chose your installation type ... for example ***[nginx server install](https://github.com/Resistine/resistine-nginx-install/actions/workflows/nginx_server_install.yml)***.
   - -   and it's time for coffee :+1: , install takes around 5 minutes depending on hardware you chose.
+
+
+## Next plans: ##
+
+- [x] installation test on docker
+- [x] installation test on server
+- [ ] add script for packaging build to deb package
+- [ ] Add delight to the experience when all tasks are complete :tada:
+- [ ] and maybee many more 👋
