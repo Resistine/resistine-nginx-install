@@ -39,8 +39,8 @@ cd ..
 git clone https://github.com/owasp-modsecurity/ModSecurity-nginx
 
 # Download, extract, and enter the Nginx source directory
-git clone https://github.com/nginx/nginx.git
-cd nginx*
+git clone https://github.com/nginx/nginx.git nginx
+cd nginx
 git submodule init
 git submodule update --recursive
 
