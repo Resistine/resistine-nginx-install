@@ -3,13 +3,16 @@
 ## Info:
 
  Nginx and ModSecurity installation from source for Ubuntu server.
- easy install with ci pipelines . there are two pipelines for installation :
+
+ Easy install with ci pipelines . there are two pipelines for installation.
+ 
 
 ### 1. Docker on ubuntu image (nginx_docker_install.yml): 
   - runs-on: [self-hosted, docker-nginx]
 
 ### 2. Ubuntu Serever  (nginx_server_install.yml): 
   - runs-on: [self-hosted, nginx]
+
 
 
 ## Running pipelines: ##
