@@ -17,6 +17,11 @@
 ### 2. Ubuntu Serever  (nginx_server_install.yml): 
   - runs-on: [self-hosted, nginx]
 
+### 3. clone repo and run install script on Ubuntu host:
+  - git clone https://github.com/Resistine/resistine-nginx-install.git install
+  - cd install
+  - chmod +x install.sh
+  - sudo ./install.sh
 
 
 ## Running pipelines: ##
