@@ -8,7 +8,7 @@ if  [[ -e build ]];then
 fi
 
 mkdir build
-mv nginx* build/
+cp -f nginx* build/
 cd build
 apt update
 apt upgrade -y
