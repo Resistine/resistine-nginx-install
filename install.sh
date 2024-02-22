@@ -12,7 +12,7 @@ cp -f nginx* build/
 cd build
 apt update
 apt upgrade -y
-apt install -y build-essential libgeoip-dev liblmdb-dev libyajl-dev dpkg-dev devscripts systemctl autoconf automake libtool libpcre3 libpcre3-dev libcurl4 ssdeep python3-ssdeep libpcre2-dev autotools-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev git
+apt install -y build-essential libgeoip-dev liblmdb-dev libyajl-dev dpkg-dev devscripts autoconf automake libtool libpcre3 libpcre3-dev libcurl4 ssdeep python3-ssdeep libpcre2-dev autotools-dev zlib1g zlib1g-dev libssl-dev libgd-dev libxml2 libxml2-dev uuid-dev git
 
 # Clone the ModSecurity repository
 git clone https://github.com/owasp-modsecurity/ModSecurity.git
